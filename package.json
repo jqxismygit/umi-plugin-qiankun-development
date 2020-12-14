@@ -2,7 +2,7 @@
   "name": "umi-plugin-qiankun-development",
   "main": "lib/index.js",
   "description": "dev",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "authors": {
     "name": "king",
     "email": "117745900@qq.com"
@@ -44,12 +44,14 @@
     "prettier": "^1.19.1",
     "puppeteer": "^1.20.0",
     "query-string": "^6.11.1",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
     "react-test-renderer": "^16.9.0",
     "test-umi-plugin": "^0.1.0",
     "umi": "^3.1.0",
-    "yorkie": "^2.0.0"
+    "yorkie": "^2.0.0",
+    "react": "16.13.1",
+    "react-dom": "17.0.1",
+    "antd": "4.6.4",
+    "moment": "2.25.3"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
