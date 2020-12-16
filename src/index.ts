@@ -16,7 +16,7 @@ export default function(api: IApi) {
   });
 
   const { qiankunDev = {}, qiankun = {} } = api.userConfig;
-  const { devExternal = false, autoDep = true } = qiankunDev;
+  const { devExternal = true, autoDep = true } = qiankunDev;
 
   if (autoDep) {
     api.addDepInfo(() => {
