@@ -52,40 +52,40 @@ export default function(api: IApi) {
             require('../package')?.dependencies?.['moment'],
         },
         {
-          name: 'bizcharts',
-          range:
-            dependencies?.['bizcharts'] ||
-            devDependencies?.['bizcharts'] ||
-            require('../package')?.dependencies?.['bizcharts'],
-        },
-        {
           name: 'lodash',
           range:
             dependencies?.['lodash'] ||
             devDependencies?.['lodash'] ||
             require('../package')?.dependencies?.['lodash'],
         },
-        {
-          name: '@antv/data-set',
-          range:
-            dependencies?.['@antv/data-set'] ||
-            devDependencies?.['@antv/data-set'] ||
-            require('../package')?.dependencies?.['@antv/data-set'],
-        },
-        {
-          name: '@antv/g2',
-          range:
-            dependencies?.['@antv/g2'] ||
-            devDependencies?.['@antv/g2'] ||
-            require('../package')?.dependencies?.['@antv/g2'],
-        },
-        {
-          name: '@antv/g6',
-          range:
-            dependencies?.['@antv/g6'] ||
-            devDependencies?.['@antv/g6'] ||
-            require('../package')?.dependencies?.['@antv/g6'],
-        },
+        // {
+        //   name: 'bizcharts',
+        //   range:
+        //     dependencies?.['bizcharts'] ||
+        //     devDependencies?.['bizcharts'] ||
+        //     require('../package')?.dependencies?.['bizcharts'],
+        // },
+        // {
+        //   name: '@antv/data-set',
+        //   range:
+        //     dependencies?.['@antv/data-set'] ||
+        //     devDependencies?.['@antv/data-set'] ||
+        //     require('../package')?.dependencies?.['@antv/data-set'],
+        // },
+        // {
+        //   name: '@antv/g2',
+        //   range:
+        //     dependencies?.['@antv/g2'] ||
+        //     devDependencies?.['@antv/g2'] ||
+        //     require('../package')?.dependencies?.['@antv/g2'],
+        // },
+        // {
+        //   name: '@antv/g6',
+        //   range:
+        //     dependencies?.['@antv/g6'] ||
+        //     devDependencies?.['@antv/g6'] ||
+        //     require('../package')?.dependencies?.['@antv/g6'],
+        // },
       ];
     });
   }
@@ -98,8 +98,8 @@ export default function(api: IApi) {
           'react-dom': 'ReactDOM',
           moment: 'moment',
           antd: 'antd',
-          bizcharts: 'BizCharts',
           lodash: '_',
+          bizcharts: 'BizCharts',
           '@antv/data-set': 'DataSet',
           '@antv/g2': 'G2',
           '@antv/g6': 'G6',
@@ -111,11 +111,10 @@ export default function(api: IApi) {
             'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.js',
             'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.js',
             'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
-            'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
-            // 'https://cdn.jsdelivr.net/npm/@antv/g2@4.0.15/lib/index.min.js',
-            'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
-            'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
-            'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
+            // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
+            // 'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
+            // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
+            // 'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
           ];
         }
       }
@@ -126,11 +125,11 @@ export default function(api: IApi) {
         'react-dom': 'ReactDOM',
         moment: 'moment',
         antd: 'antd',
-        bizcharts: 'BizCharts',
         lodash: '_',
-        '@antv/data-set': 'DataSet',
-        '@antv/g2': 'G2',
-        '@antv/g6': 'G6',
+        // bizcharts: 'BizCharts',
+        // '@antv/data-set': 'DataSet',
+        // '@antv/g2': 'G2',
+        // '@antv/g6': 'G6',
       };
       if (qiankun.master) {
         initConfig.scripts = [
@@ -139,12 +138,12 @@ export default function(api: IApi) {
           'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
           'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.min.js',
           'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
-          'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
-          //这个CDN有点问题，不晓得啥情况
-          // 'https://cdn.jsdelivr.net/npm/@antv/g2@4.0.15/lib/index.min.js',
-          'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
-          'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
-          'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
+          // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
+          // //这个CDN有点问题，不晓得啥情况
+          // // 'https://cdn.jsdelivr.net/npm/@antv/g2@4.0.15/lib/index.min.js',
+          // 'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
+          // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
+          // 'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
         ];
       }
     }
