@@ -2,7 +2,7 @@
   "name": "umi-plugin-qiankun-development",
   "main": "lib/index.js",
   "description": "dev",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "authors": {
     "name": "king",
     "email": "117745900@qq.com"

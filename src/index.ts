@@ -99,10 +99,10 @@ export default function(api: IApi) {
           moment: 'moment',
           antd: 'antd',
           lodash: '_',
-          bizcharts: 'BizCharts',
-          '@antv/data-set': 'DataSet',
-          '@antv/g2': 'G2',
-          '@antv/g6': 'G6',
+          // bizcharts: 'BizCharts',
+          // '@antv/data-set': 'DataSet',
+          // '@antv/g2': 'G2',
+          // '@antv/g6': 'G6',
         };
         if (!qiankun.slave) {
           initConfig.scripts = [
