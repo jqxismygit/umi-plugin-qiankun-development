@@ -2,7 +2,7 @@
   "name": "umi-plugin-qiankun-development",
   "main": "lib/index.js",
   "description": "dev",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "authors": {
     "name": "king",
     "email": "117745900@qq.com"
@@ -51,7 +51,12 @@
     "react": "16.13.1",
     "react-dom": "17.0.1",
     "antd": "4.6.4",
-    "moment": "2.25.3"
+    "moment": "2.25.3",
+    "@antv/data-set": "^0.11.4",
+    "@antv/g2": "4.0.15",
+    "@antv/g6": "3.6.0",
+    "bizcharts": "3.5.9",
+    "lodash": "^4.17.15"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
