@@ -6,4 +6,8 @@ export default defineConfig({
   qiankunDev: {
     devExternal: true,
   },
+  locale: {
+    default: 'zh-CN',
+    antd: true,
+  },
 });

@@ -1,4 +1,6 @@
 {
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "@umijs/preset-react": "1.6.4"
   }
 }

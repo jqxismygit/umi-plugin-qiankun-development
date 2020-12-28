@@ -96,7 +96,7 @@ export default function(api: IApi) {
         initConfig.externals = {
           react: 'React',
           'react-dom': 'ReactDOM',
-          moment: 'moment',
+          // moment: 'moment',
           antd: 'antd',
           lodash: '_',
           // bizcharts: 'BizCharts',
@@ -108,7 +108,7 @@ export default function(api: IApi) {
           initConfig.scripts = [
             'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.development.js',
             'https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.development.js',
-            'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.js',
+            // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
             'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.js',
             'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
@@ -123,7 +123,7 @@ export default function(api: IApi) {
       initConfig.externals = {
         react: 'React',
         'react-dom': 'ReactDOM',
-        moment: 'moment',
+        // moment: 'moment',
         antd: 'antd',
         lodash: '_',
         // bizcharts: 'BizCharts',
@@ -135,7 +135,7 @@ export default function(api: IApi) {
         initConfig.scripts = [
           'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js',
           'https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js',
-          'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
+          // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
           'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.min.js',
           'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
           // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
