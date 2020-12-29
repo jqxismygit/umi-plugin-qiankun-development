@@ -107,7 +107,7 @@ export default function(api: IApi) {
         if (!qiankun.slave) {
           initConfig.scripts = [
             'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.development.js',
-            'https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.development.js',
+            'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.development.js',
             // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
             'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.js',
             'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
@@ -134,7 +134,7 @@ export default function(api: IApi) {
       if (qiankun.master) {
         initConfig.scripts = [
           'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js',
-          'https://cdn.jsdelivr.net/npm/react-dom@17.0.1/umd/react-dom.production.min.js',
+          'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js',
           // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
           'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.min.js',
           'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
