@@ -1,6 +1,11 @@
 // ref:
 // - https://umijs.org/plugins/api
 import { IApi, IConfig } from '@umijs/types';
+const { join } = require('path');
+const fse = require('fs-extra');
+const fs = require('fs');
+const chalk = require('chalk');
+
 export default function(api: IApi) {
   api.logger.info('use plugin umi-plugin-qiankun-development');
   api.describe({
@@ -10,13 +15,63 @@ export default function(api: IApi) {
         return joi.object({
           devExternal: joi.boolean(),
           autoDep: joi.boolean(),
+          disableOptimization: joi.boolean(),
+          disableBuild: joi.boolean(),
         });
       },
     },
   });
 
   const { qiankunDev = {}, qiankun = {} } = api.userConfig;
-  const { devExternal = true, autoDep = true } = qiankunDev;
+  const {
+    devExternal = true,
+    autoDep = true,
+    disableOptimization = false,
+    disableBuild = false,
+  } = qiankunDev;
+
+  if (!disableOptimization) {
+    api.modifyConfig((initConfig: IConfig) => {
+      if (api.env === 'development') {
+        initConfig.devtool = false;
+        initConfig.nodeModulesTransform = {
+          type: 'none',
+          exclude: [],
+        };
+      }
+      return initConfig;
+    });
+  }
+
+  if (!disableBuild) {
+    const exclude = ['.umi', '.umi-production', '.umi-test', 'test'];
+    function buildModule() {
+      const libPath = join(api.cwd, 'lib');
+      const srcPath = join(api.cwd, 'src');
+      console.log(chalk.green('building module...'));
+      const time = Date.now();
+      try {
+        fse.removeSync(libPath);
+        fse.ensureDirSync(libPath);
+        const files = fs.readdirSync(srcPath);
+        files.forEach(function(file: string) {
+          if (exclude.indexOf(file) === -1) {
+            fse.copySync(join(srcPath, file), join(libPath, file));
+          }
+        });
+        console.log(
+          chalk.green(`build module successfully in ${Date.now() - time}ms`),
+        );
+      } catch (err) {
+        console.error(err);
+      }
+    }
+    api.onDevCompileDone(({ isFirstCompile, type }) => {
+      if (!isFirstCompile) {
+        buildModule();
+      }
+    });
+  }
 
   if (autoDep) {
     api.addDepInfo(() => {
@@ -106,11 +161,11 @@ export default function(api: IApi) {
         };
         if (!qiankun.slave) {
           initConfig.scripts = [
-            'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.development.js',
-            'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.development.js',
+            'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.development.js',
+            'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.development.js',
             // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
-            'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.js',
-            'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
+            'https://lins-static.cdn.bcebos.com/cdn-lib/antd@4.6.4/dist/antd.js',
+            'https://lins-static.cdn.bcebos.com/cdn-lib/lodash@4.17.15/lodash.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
             // 'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
@@ -133,11 +188,11 @@ export default function(api: IApi) {
       };
       if (qiankun.master) {
         initConfig.scripts = [
-          'https://cdn.jsdelivr.net/npm/react@16.13.1/umd/react.production.min.js',
-          'https://cdn.jsdelivr.net/npm/react-dom@16.13.1/umd/react-dom.production.min.js',
+          'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.production.min.js',
+          'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.production.min.js',
           // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
-          'https://cdn.jsdelivr.net/npm/antd@4.6.4/dist/antd.min.js',
-          'https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js',
+          'https://lins-static.cdn.bcebos.com/cdn-lib/antd@4.6.4/dist/antd.min.js',
+          'https://lins-static.cdn.bcebos.com/cdn-lib/lodash@4.17.15/lodash.min.js',
           // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
           // //这个CDN有点问题，不晓得啥情况
           // // 'https://cdn.jsdelivr.net/npm/@antv/g2@4.0.15/lib/index.min.js',
