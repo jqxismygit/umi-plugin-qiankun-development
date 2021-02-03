@@ -17,6 +17,7 @@ export default function(api: IApi) {
           autoDep: joi.boolean(),
           disableOptimization: joi.boolean(),
           disableBuild: joi.boolean(),
+          scripts: joi.array(),
         });
       },
     },
@@ -28,6 +29,7 @@ export default function(api: IApi) {
     autoDep = true,
     disableOptimization = false,
     disableBuild = false,
+    scripts
   } = qiankunDev;
 
   if (!disableOptimization) {
@@ -160,7 +162,7 @@ export default function(api: IApi) {
           // '@antv/g6': 'G6',
         };
         if (!qiankun.slave) {
-          initConfig.scripts = [
+          initConfig.scripts = scripts || [
             'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.development.js',
             'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.development.js',
             // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
@@ -187,7 +189,7 @@ export default function(api: IApi) {
         // '@antv/g6': 'G6',
       };
       if (qiankun.master) {
-        initConfig.scripts = [
+        initConfig.scripts = scripts || [
           'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.production.min.js',
           'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.production.min.js',
           // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
