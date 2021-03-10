@@ -2,7 +2,7 @@
   "name": "umi-plugin-qiankun-development",
   "main": "lib/index.js",
   "description": "dev",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "authors": {
     "name": "king",
     "email": "117745900@qq.com"
@@ -52,7 +52,8 @@
     "react-dom": "17.0.1",
     "antd": "4.6.4",
     "moment": "2.25.3",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "fs-extra": "^9.0.1"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
