@@ -163,8 +163,8 @@ export default function(api: IApi) {
         };
         if (!qiankun.slave) {
           initConfig.scripts = scripts || [
-            'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.development.min.js',
-            'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.development.min.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.development.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.development.js',
             // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
             'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.js',
             'https://lins-cdn.sensoro.com/lins-cdn/lodash@4.17.15/lodash.min.js',
