@@ -29,7 +29,7 @@ export default function(api: IApi) {
     autoDep = true,
     disableOptimization = false,
     disableBuild = false,
-    scripts
+    scripts,
   } = qiankunDev;
 
   if (!disableOptimization) {
@@ -163,11 +163,11 @@ export default function(api: IApi) {
         };
         if (!qiankun.slave) {
           initConfig.scripts = scripts || [
-            'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.development.js',
-            'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.development.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.development.min.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.development.min.js',
             // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
-            'https://lins-static.cdn.bcebos.com/cdn-lib/antd@4.6.4/dist/antd.js',
-            'https://lins-static.cdn.bcebos.com/cdn-lib/lodash@4.17.15/lodash.min.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.js',
+            'https://lins-cdn.sensoro.com/lins-cdn/lodash@4.17.15/lodash.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
             // 'https://gw.alipayobjects.com/os/lib/antv/g2/4.0.15/dist/g2.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
@@ -190,11 +190,11 @@ export default function(api: IApi) {
       };
       if (qiankun.master) {
         initConfig.scripts = scripts || [
-          'https://lins-static.cdn.bcebos.com/cdn-lib/react@16.13.1/umd/react.production.min.js',
-          'https://lins-static.cdn.bcebos.com/cdn-lib/react-dom@16.13.1/umd/react-dom.production.min.js',
+          'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.production.min.js',
+          'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.production.min.js',
           // 'https://cdn.jsdelivr.net/npm/moment@2.25.3/moment.min.js',
-          'https://lins-static.cdn.bcebos.com/cdn-lib/antd@4.6.4/dist/antd.min.js',
-          'https://lins-static.cdn.bcebos.com/cdn-lib/lodash@4.17.15/lodash.min.js',
+          'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.js',
+          'https://lins-cdn.sensoro.com/lins-cdn/lodash@4.17.15/lodash.min.js',
           // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
           // //这个CDN有点问题，不晓得啥情况
           // // 'https://cdn.jsdelivr.net/npm/@antv/g2@4.0.15/lib/index.min.js',
