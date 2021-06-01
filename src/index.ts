@@ -147,6 +147,18 @@ export default function(api: IApi) {
     });
   }
 
+  if (qiankun.master && (devExternal || api.env === 'production')) {
+    api.addHTMLLinks(() => {
+      return [
+        {
+          rel: 'stylesheet',
+          href:
+            'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.css',
+        },
+      ];
+    });
+  }
+
   api.modifyConfig((initConfig: IConfig) => {
     if (api.env === 'development') {
       if (devExternal) {
@@ -173,16 +185,6 @@ export default function(api: IApi) {
             // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
             // 'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
           ];
-
-          api.addHTMLLinks(() => {
-            return [
-              {
-                rel: 'stylesheet',
-                href:
-                  'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.css',
-              },
-            ];
-          });
         }
       }
     }
@@ -212,16 +214,6 @@ export default function(api: IApi) {
           // 'https://cdn.jsdelivr.net/npm/@antv/g6@4.0.3/dist/g6.min.js',
           // 'https://cdn.jsdelivr.net/npm/bizcharts@3.5.9/umd/BizCharts.min.js',
         ];
-
-        api.addHTMLLinks(() => {
-          return [
-            {
-              rel: 'stylesheet',
-              href:
-                'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.css',
-            },
-          ];
-        });
       }
     }
     return initConfig;
