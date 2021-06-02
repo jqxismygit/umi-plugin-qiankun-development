@@ -147,17 +147,17 @@ export default function(api: IApi) {
     });
   }
 
-  if (qiankun.master && (devExternal || api.env === 'production')) {
-    api.addHTMLLinks(() => {
-      return [
-        {
-          rel: 'stylesheet',
-          href:
-            'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.css',
-        },
-      ];
-    });
-  }
+  // if (qiankun.master && (devExternal || api.env === 'production')) {
+  //   api.addHTMLLinks(() => {
+  //     return [
+  //       {
+  //         rel: 'stylesheet',
+  //         href:
+  //           'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.css',
+  //       },
+  //     ];
+  //   });
+  // }
 
   api.modifyConfig((initConfig: IConfig) => {
     if (api.env === 'development') {
