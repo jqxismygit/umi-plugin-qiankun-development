@@ -177,7 +177,7 @@ export default function(api: IApi) {
           initConfig.scripts = scripts || [
             'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.development.js',
             'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.development.js',
-            'https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js',
+            'https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js',
             'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.js',
             'https://lins-cdn.sensoro.com/lins-cdn/lodash@4.17.15/lodash.min.js',
             // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
@@ -204,7 +204,7 @@ export default function(api: IApi) {
         initConfig.scripts = scripts || [
           'https://lins-cdn.sensoro.com/lins-cdn/react@16.13.1/umd/react.production.min.js',
           'https://lins-cdn.sensoro.com/lins-cdn/react-dom@16.13.1/umd/react-dom.production.min.js',
-          'https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js',
+          'https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js',
           'https://lins-cdn.sensoro.com/lins-cdn/antd@4.13.1/dist/antd.min.js',
           'https://lins-cdn.sensoro.com/lins-cdn/lodash@4.17.15/lodash.min.js',
           // 'https://cdn.jsdelivr.net/npm/@antv/data-set@0.11.7/build/data-set.min.js',
